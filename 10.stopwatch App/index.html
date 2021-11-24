@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styling.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Frontend Bootcamp</title>
+
+</head>
+<script>
+    var idd = null;
+
+    function onl() {
+        idd = document.getElementById("idd");
+        idd.onload = null;
+        idd.src = 'http://127.0.0.1:8000/exp.html'
+    }
+
+    function f() {
+        idd.onload = g;
+        idd.src = "http://127.0.0.1:8000/&foo=1";
+    }
+
+    function g() {
+        idd.onload = null;
+        document.getElementById("cur").appendChild(document.createElement("a"));
+    }
+</script>
+
+<body>
+    <div id="id1"></div>
+    <div id="cur"></div><br>
+    <video id="vid"></video>
+    <iframe id="idd" style="display:none" onload="onl();"></iframe>
+
+
+    <div class="container">
+        <!--         title-->
+        <div class="header">
+
+            <p>STOPWATCH</p>
+        </div>
+        <!--    lap time     -->
+        <div class="lap_time">
+            <span id="lap_minute">00</span>:
+            <span id="lap_second">00</span>:
+            <span id="lap_cen_second">00</span>
+        </div>
+
+        <!-- Time-->
+        <div class="time">
+            <span id="time_minute">00</span>:<span id="time_second">00</span>:<span id="time_cen_second">00</span>
+        </div>
+
+
+
+        <!--    control-->
+        <div id="controler" class="row justify-content-center ">
+
+            <div class="  col-2 offset-s-4 ">
+                <div id="startBut" class="control">start</div>
+
+                <div id="stopBut" class="control">stop</div>
+                <div id="resumetBut" class="control">resume</div>
+
+
+            </div>
+
+
+
+            <div class="  col-2 offset-s-4 ">
+                <div id="lapBut" class="control">lap</div>
+                <div id="ResetBut" class="control">Reset</div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!--        Laps-->
+        <div id="laps">
+
+        </div>
+    </div>
+    <script src="stopwatch.js">
+    </script>
+
+</body>
+
+</html>
